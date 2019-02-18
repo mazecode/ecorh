@@ -20,6 +20,7 @@ Route::view('/', 'landing');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/documents', 'DocumentController@index2')->name('gen');
 
 Route::prefix('dashboard')->middleware(['auth'])->group(function () {
     Route::match(['get', 'post'], '/', function () {

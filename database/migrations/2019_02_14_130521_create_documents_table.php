@@ -16,7 +16,7 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type')->nullable();
+            $table->enum('type', ['docx', 'doc', 'pdf'])->nullable();
             $table->string('template')->nullable();
             $table->string('path_template')->nullable();
             $table->text('meta')->nullable();
